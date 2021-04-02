@@ -1,5 +1,5 @@
 <?php
-
+/*version 1 */
 require_once "controladores/plantilla.controlador.php";
 require_once "controladores/productos.controlador.php";
 require_once "controladores/slide.controlador.php";
