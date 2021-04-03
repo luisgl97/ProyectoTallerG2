@@ -8,7 +8,7 @@ class Ruta{
 
 	public function ctrRuta(){
 
-		return "http://localhost/games-4-life/frontend/";
+		return "http://localhost/ProyectoTallerG2/frontend/";
 	
 	}
 
@@ -18,7 +18,7 @@ class Ruta{
 
 	public function ctrRutaServidor(){
 
-		return "http://localhost/games-4-life/backend/";
+		return "http://localhost/ProyectoTallerG2/backend/";
 	
 	}
 
