@@ -54,7 +54,7 @@ TOP
 					
 					<li><a href="#modalIngreso" data-toggle="modal">Ingresar</a></li>
 					<li>|</li>
-					<li><a href="#modalRegistro" data-toggle="modal">Crear una cuenta</a></li>
+					<li><a href="#modalRegistro" data-toggle="modal">Registrarse</a></li>
 
 				</ul>
 
