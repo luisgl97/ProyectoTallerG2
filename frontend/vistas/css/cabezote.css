@@ -28,10 +28,9 @@ TOP
 HEADER
 =============================================*/
 
-
-/* header {
-    background: url(../../../backend/vistas/img/plantilla/fondo.png );
-} */
+header {
+    background-color: darkgrey;
+}
 
 header #btnCategorias {
     margin: 20px 0;
