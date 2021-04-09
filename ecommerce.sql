@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 04, 2021 at 03:59 PM
+-- Generation Time: Apr 09, 2021 at 02:17 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -72,6 +72,65 @@ INSERT INTO `categorias` (`id`, `categoria`, `ruta`, `fecha`) VALUES
 (3, 'ACCESORIOS', 'accesorios', '0000-00-00 00:00:00'),
 (4, 'GIFT CARDS', 'gift-cards', '2021-04-02 05:46:35'),
 (5, 'COLECCIONABLES', 'coleccionables', '2021-04-01 03:35:04');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comentarios`
+--
+
+CREATE TABLE `comentarios` (
+  `id` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL,
+  `calificacion` float NOT NULL,
+  `comentario` text NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `compras`
+--
+
+CREATE TABLE `compras` (
+  `id` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL,
+  `envio` int(11) NOT NULL,
+  `metodo` text NOT NULL,
+  `email` text NOT NULL,
+  `direccion` text NOT NULL,
+  `pais` text NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `deseos`
+--
+
+CREATE TABLE `deseos` (
+  `id` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `deseos`
+--
+
+INSERT INTO `deseos` (`id`, `id_usuario`, `id_producto`, `fecha`) VALUES
+(1, 2, 37, '2021-04-08 05:18:38'),
+(2, 2, 40, '2021-04-08 05:18:48'),
+(3, 2, 40, '2021-04-08 05:18:48'),
+(4, 2, 40, '2021-04-08 05:18:48'),
+(5, 2, 40, '2021-04-08 05:18:49'),
+(6, 2, 37, '2021-04-08 05:19:04'),
+(7, 2, 40, '2021-04-08 05:19:09');
 
 -- --------------------------------------------------------
 
@@ -178,7 +237,7 @@ INSERT INTO `productos` (`id`, `id_categoria`, `id_subcategoria`, `tipo`, `ruta`
 (37, 4, 16, 'fisico', 'googleplay-10', 'Tarjeta Google Play 10 USD', 'Tarjeta de Regalo', 'El crédito de las tarjetas puede ser usado para comprar los diferentes tipos de contenidos que nos ofrece Google Play: aplicaciones, libros, música y películas.', '[{\"foto\":\"vistas/img/multimedia/gift-cards/googleplay/googleplay_10.jpg\"}]', '', 0, 'vistas/img/multimedia/gift-cards/googleplay/googleplay_10.jpg', 2, 1, 1, 1, 1, 1, 0, 10, 1, '', '2021-04-30 01:24:47', 1, 1, 1, '2021-04-04 02:32:23'),
 (38, 4, 16, 'fisico', 'googleplay-25', 'Tarjeta Google Play 25 USD', 'Tarjeta de Regalo', 'El crédito de las tarjetas puede ser usado para comprar los diferentes tipos de contenidos que nos ofrece Google Play: aplicaciones, libros, música y películas.', '[{\"foto\":\"vistas/img/multimedia/gift-cards/googleplay/googleplay_25.jpg\"}]', '', 30, 'vistas/img/multimedia/gift-cards/googleplay/googleplay_25.jpg', 8, 1, 1, 1, 1, 1, 1, 25, 1, '', '2021-04-30 01:24:47', 1, 1, 1, '2021-04-03 03:05:27'),
 (39, 4, 16, 'fisico', 'googleplay-50', 'Tarjeta Google Play 10 USD', 'Tarjeta de Regalo', 'El crédito de las tarjetas puede ser usado para comprar los diferentes tipos de contenidos que nos ofrece Google Play: aplicaciones, libros, música y películas.', '[{\"foto\":\"vistas/img/multimedia/gift-cards/googleplay/googleplay_50.jpg\"}]', '', 60, 'vistas/img/multimedia/gift-cards/googleplay/googleplay_50.jpg', 8, 1, 1, 1, 1, 1, 1, 50, 1, '', '2021-04-30 01:24:47', 1, 1, 1, '2021-04-03 03:05:30'),
-(40, 4, 17, 'fisico', 'nintendoeshop-5', 'Tarjeta Nintendo Eshop 5 USD', 'Tarjeta de Regalo', 'Las Nintendo eShop Cards son una alternativa rápida, fácil y segura a las tarjetas de crédito a la hora de comprar juegos y otros contenidos en Nintendo eShop de Wii U y de la familia de consolas Nintendo 3DS o en el sitio web oficial de Nintendo*', '[{\"foto\":\"vistas/img/multimedia/gift-cards/nintendoeshop/nintendoeshop_5.jpg\"}]', '', 0, 'vistas/img/multimedia/gift-cards/nintendoeshop/nintendoeshop_5.jpg', 8, 1, 2, 1, 1, 1, 0, 5, 1, '', '2021-04-30 01:24:47', 1, 1, 1, '2021-04-04 02:33:59'),
+(40, 4, 17, 'fisico', 'nintendoeshop-5', 'Tarjeta Nintendo Eshop 5 USD', 'Tarjeta de Regalo', 'Las Nintendo eShop Cards son una alternativa rápida, fácil y segura a las tarjetas de crédito a la hora de comprar juegos y otros contenidos en Nintendo eShop de Wii U y de la familia de consolas Nintendo 3DS o en el sitio web oficial de Nintendo*', '[{\"foto\":\"vistas/img/multimedia/gift-cards/nintendoeshop/nintendoeshop_5.jpg\"}]', '', 0, 'vistas/img/multimedia/gift-cards/nintendoeshop/nintendoeshop_5.jpg', 8, 1, 4, 1, 1, 1, 0, 5, 1, '', '2021-04-30 01:24:47', 1, 1, 1, '2021-04-08 05:19:00'),
 (41, 4, 17, 'fisico', 'nintendoeshop-25', 'Tarjeta Nintendo Eshop 25 USD', 'Tarjeta de Regalo', 'Las Nintendo eShop Cards son una alternativa rápida, fácil y segura a las tarjetas de crédito a la hora de comprar juegos y otros contenidos en Nintendo eShop de Wii U y de la familia de consolas Nintendo 3DS o en el sitio web oficial de Nintendo*', '[{\"foto\":\"vistas/img/multimedia/gift-cards/nintendoeshop/nintendoeshop_25.jpg\"}]', '', 26, 'vistas/img/multimedia/gift-cards/nintendoeshop/nintendoeshop_25.jpg', 9, 1, 1, 1, 1, 1, 0, 25, 1, '', '2021-04-30 01:24:47', 1, 1, 1, '2021-04-04 02:33:02'),
 (42, 4, 17, 'fisico', 'nintendoeshop-99', 'Tarjeta Nintendo Eshop 99 USD', 'Tarjeta de Regalo', 'Las Nintendo eShop Cards son una alternativa rápida, fácil y segura a las tarjetas de crédito a la hora de comprar juegos y otros contenidos en Nintendo eShop de Wii U y de la familia de consolas Nintendo 3DS o en el sitio web oficial de Nintendo*', '[{\"foto\":\"vistas/img/multimedia/gift-cards/nintendoeshop/nintendoeshop_99.jpg\"}]', '', 100, 'vistas/img/multimedia/gift-cards/nintendoeshop/nintendoeshop_99.jpg', 9, 1, 1, 1, 1, 1, 1, 99, 1, '', '2021-04-30 01:24:47', 1, 1, 1, '2021-04-03 16:24:19');
 
@@ -252,6 +311,39 @@ INSERT INTO `subcategorias` (`id`, `subcategoria`, `id_categoria`, `ruta`, `fech
 (20, 'LEGO', 5, 'lego', '2021-04-01 03:45:32'),
 (21, 'Amiibo', 5, 'amiibo', '2021-04-01 03:45:37');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `nombre` text NOT NULL,
+  `password` text NOT NULL,
+  `email` text NOT NULL,
+  `modo` text NOT NULL,
+  `foto` text NOT NULL,
+  `verificacion` int(11) NOT NULL,
+  `emailEncriptado` text,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nombre`, `password`, `email`, `modo`, `foto`, `verificacion`, `emailEncriptado`, `fecha`) VALUES
+(1, 'pepe', '$2a$07$asxx54ahjppf45sd87a5auQ2vOHol1kJTAsmvJ5etqS7WJpS4p5Xy', 'pepeje@remail.com', 'directo', '', 1, '0412588f812f8b20731ac46d1e9229c1', '2021-04-08 04:04:49'),
+(2, 'lucas', '$2a$07$asxx54ahjppf45sd87a5auJRR6foEJ7ynpjisKtbiKJbvJsoQ8VPS', 'lucas@gmail.com', 'directo', '', 1, '8cf1058ab12967c940ece8ea627adff2', '2021-04-08 06:14:05'),
+(3, 'layla', '$2a$07$asxx54ahjppf45sd87a5auJRR6foEJ7ynpjisKtbiKJbvJsoQ8VPS', 'layla@hotmail.com', 'directo', '', 0, '2a4b2066abdda917f68d76805d3976bf', '2021-04-08 06:22:36'),
+(7, 'nina', '$2a$07$asxx54ahjppf45sd87a5auJRR6foEJ7ynpjisKtbiKJbvJsoQ8VPS', 'nina@hotmail.com', 'directo', '', 0, 'f6fb13c5068f06f05d33fec3ba24d28e', '2021-04-08 06:29:24'),
+(8, 'nina', '$2a$07$asxx54ahjppf45sd87a5auJRR6foEJ7ynpjisKtbiKJbvJsoQ8VPS', 'jee@hotmail.com', 'directo', '', 1, '868d9626f342988717f7c19d54efd139', '2021-04-08 06:28:02'),
+(9, 'eduardo', '$2a$07$asxx54ahjppf45sd87a5auJRR6foEJ7ynpjisKtbiKJbvJsoQ8VPS', 'eduardo@remail.com', 'directo', '', 1, 'd2a6e073a392caec8d672d21d323234e', '2021-04-08 06:31:22'),
+(10, 'luis', '$2a$07$asxx54ahjppf45sd87a5auJRR6foEJ7ynpjisKtbiKJbvJsoQ8VPS', 'luis.gonzales.ayvar@gmail.com', 'directo', '', 1, '91e72d7bb1a1125408eef3f126e19346', '2021-04-08 06:32:22'),
+(11, 'pepa', '$2a$07$asxx54ahjppf45sd87a5auJRR6foEJ7ynpjisKtbiKJbvJsoQ8VPS', 'pepa@rumail.com', 'directo', '', 1, '005a1bd446bc6db54eb94cae4243139b', '2021-04-08 06:41:59'),
+(12, 'lala', '$2a$07$asxx54ahjppf45sd87a5auJRR6foEJ7ynpjisKtbiKJbvJsoQ8VPS', 'lala@gmail.com', 'directo', '', 1, 'fb60928ea29470d767477dde926a19a6', '2021-04-08 06:42:42');
+
 --
 -- Indexes for dumped tables
 --
@@ -266,6 +358,24 @@ ALTER TABLE `banner`
 -- Indexes for table `categorias`
 --
 ALTER TABLE `categorias`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `comentarios`
+--
+ALTER TABLE `comentarios`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `compras`
+--
+ALTER TABLE `compras`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `deseos`
+--
+ALTER TABLE `deseos`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -293,6 +403,12 @@ ALTER TABLE `subcategorias`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -307,6 +423,24 @@ ALTER TABLE `banner`
 --
 ALTER TABLE `categorias`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `comentarios`
+--
+ALTER TABLE `comentarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `compras`
+--
+ALTER TABLE `compras`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `deseos`
+--
+ALTER TABLE `deseos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `plantilla`
@@ -331,6 +465,12 @@ ALTER TABLE `slide`
 --
 ALTER TABLE `subcategorias`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT for table `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
