@@ -18,7 +18,7 @@ class Ruta{
 
 	public function ctrRutaServidor(){
 
-		return "http://localhost/ProyectoTallerG2/backend/";
+		return "https://games4life.herokuapp.com/";
 	
 	}
 
