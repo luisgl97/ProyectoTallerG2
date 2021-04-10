@@ -14,7 +14,7 @@ class Conexion{
 		return $link;
 
 	}
-
+// b6e5e76d9d929a:4ed611fc@us-cdbr-east-03.cleardb.com/heroku_81f31edf6fc71e5
 
 }
 
