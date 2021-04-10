@@ -8,7 +8,7 @@ class Ruta{
 
 	public function ctrRuta(){
 
-		return "http://https://games4life.herokuapp.com/";
+		return "https://games4life.herokuapp.com/";
 	
 	}
 
