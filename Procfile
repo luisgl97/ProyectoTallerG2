@@ -1,1 +1,1 @@
-web: frontend/bin/heroku-php-apache2 public/
+web: frontend/bin/heroku-php-apache2
